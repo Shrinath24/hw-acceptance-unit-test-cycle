@@ -1,0 +1,18 @@
+-# in app/views/movies/show.html.haml
+
+%h3 Similar movies of #{@movie_object.title}
+%table#movies.table.table-striped.col-md-12
+  %thead
+    %tr
+      %th Movie title
+      %th Rating
+      %th Director
+      %th Release date
+  %tbody
+    - @movies.each do |movie|
+      %tr
+        %td= movie.title
+        %td= movie.rating
+        %td= movie.director
+        %td= movie.release_date
+       

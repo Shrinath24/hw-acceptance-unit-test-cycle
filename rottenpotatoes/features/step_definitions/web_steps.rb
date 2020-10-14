@@ -233,6 +233,7 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
     current_path.should == path_to(page_name)
   else
     assert_equal path_to(page_name), current_path
+
   end
 end
 
@@ -248,6 +249,7 @@ Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
     assert_equal expected_params, actual_params
   end
 end
+
 
 Then /^show me the page$/ do
   save_and_open_page

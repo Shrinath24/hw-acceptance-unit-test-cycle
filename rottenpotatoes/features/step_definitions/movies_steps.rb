@@ -1,7 +1,7 @@
 
 Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
-    Movie.create movie
+    Movie.create!(movie)
   end
 end
 
@@ -22,4 +22,8 @@ Then /I should see all the movies/ do
   Movie.all.each do |movie|
     step %{I should see "#{movie.title}"}
   end
+end
+
+Then /^the director of (.*) should be (.*)$/ do |m_title, m_director|
+    Movie.find_by(title: m_title).should == Movie.find_by(director: m_director)
 end
